@@ -387,115 +387,116 @@ abstract class ChartTitleOptions {
 
 @anonymous
 @JS()
-abstract class ChartLegendOptions {
-  external bool get display;
-  external set display(bool v);
-  external String /*'left'|'right'|'top'|'bottom'*/ get position;
-  external set position(String /*'left'|'right'|'top'|'bottom'*/ v);
-  external bool get fullWidth;
-  external set fullWidth(bool v);
+class ChartLegendOptions {
+  bool display;
+  String position; // 'left' | 'right' | 'top' | 'bottom'
+  bool fullWidth;
+  ChartLegendLabelOptions labels;
+  bool reverse;
+
   external void onClick(MouseEvent event, ChartLegendItem legendItem);
   external void onHover(MouseEvent event, ChartLegendItem legendItem);
-  external ChartLegendLabelOptions get labels;
-  external set labels(ChartLegendLabelOptions v);
-  external bool get reverse;
-  external set reverse(bool v);
+
+  // Factory constructor
+  external factory ChartLegendOptions({
+    bool display,
+    String position, // 'left' | 'right' | 'top' | 'bottom'
+    bool fullWidth,
+    ChartLegendLabelOptions labels,
+    bool reverse,
+  });
 }
 
 @anonymous
 @JS()
-abstract class ChartLegendLabelOptions {
-  external num get boxWidth;
-  external set boxWidth(num v);
-  external num get fontSize;
-  external set fontSize(num v);
-  external String get fontStyle;
-  external set fontStyle(String v);
-  external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
-  external set fontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
-  external String get fontFamily;
-  external set fontFamily(String v);
-  external num get padding;
-  external set padding(num v);
+class ChartLegendLabelOptions {
+  num boxWidth;
+  num fontSize;
+  String fontStyle;
+  dynamic fontColor; // String|CanvasGradient|CanvasPattern|List<String>
+  String fontFamily;
+  num padding;
+
   external dynamic generateLabels(dynamic chart);
+
+  // Factory constructor
+  external factory ChartLegendLabelOptions({
+    num boxWidth,
+    num fontSize,
+    String fontStyle,
+    dynamic fontColor, // String|CanvasGradient|CanvasPattern|List<String>
+    String fontFamily,
+    num padding,
+  });
 }
 
 @anonymous
 @JS()
-abstract class ChartTooltipOptions {
-  external bool get enabled;
-  external set enabled(bool v);
-  external void custom(dynamic a);
-  external String get mode;
-  external set mode(String v);
-  external bool get intersect;
-  external set intersect(bool v);
-  external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
-  external String get titleFontFamily;
-  external set titleFontFamily(String v);
-  external num get titleFontSize;
-  external set titleFontSize(num v);
-  external String get titleFontStyle;
-  external set titleFontStyle(String v);
-  external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get titleFontColor;
-  external set titleFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
-  external num get titleSpacing;
-  external set titleSpacing(num v);
-  external num get titleMarginBottom;
-  external set titleMarginBottom(num v);
-  external String get bodyFontFamily;
-  external set bodyFontFamily(String v);
-  external num get bodyFontSize;
-  external set bodyFontSize(num v);
-  external String get bodyFontStyle;
-  external set bodyFontStyle(String v);
-  external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get bodyFontColor;
-  external set bodyFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
-  external num get bodySpacing;
-  external set bodySpacing(num v);
-  external String get footerFontFamily;
-  external set footerFontFamily(String v);
-  external num get footerFontSize;
-  external set footerFontSize(num v);
-  external String get footerFontStyle;
-  external set footerFontStyle(String v);
-  external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get footerFontColor;
-  external set footerFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
-  external num get footerSpacing;
-  external set footerSpacing(num v);
-  external num get footerMarginTop;
-  external set footerMarginTop(num v);
-  external num get xPadding;
-  external set xPadding(num v);
-  external num get yPadding;
-  external set yPadding(num v);
-  external num get caretSize;
-  external set caretSize(num v);
-  external num get cornerRadius;
-  external set cornerRadius(num v);
-  external String get multiKeyBackground;
-  external set multiKeyBackground(String v);
-  external ChartTooltipCallback get callbacks;
-  external set callbacks(ChartTooltipCallback v);
-  external bool filter(ChartTooltipItem item);
-  external num itemSort(ChartTooltipItem itemA, ChartTooltipItem itemB);
-  external String /*'average'|'nearest'*/ get position;
-  external set position(String /*'average'|'nearest'*/ v);
-  external num get caretPadding;
-  external set caretPadding(num v);
-  external bool get displayColors;
-  external set displayColors(bool v);
-  external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
-  external num get borderWidth;
-  external set borderWidth(num v);
+class ChartTooltipOptions {
+  bool enabled;
+  String mode;
+  bool intersect;
+  dynamic backgroundColor;
+  String titleFontFamily;
+  num titleFontSize;
+  String titleFontStyle;
+  dynamic titleFontColor;
+  num titleSpacing;
+  num titleMarginBottom;
+  String bodyFontFamily;
+  num bodyFontSize;
+  String bodyFontStyle;
+  dynamic bodyFontColor;
+  num bodySpacing;
+  String footerFontFamily;
+  num footerFontSize;
+  String footerFontStyle;
+  dynamic footerFontColor;
+  num footerSpacing;
+  num footerMarginTop;
+  num xPadding;
+  num yPadding;
+  num caretSize;
+  num cornerRadius;
+  String multiKeyBackground;
+  ChartTooltipCallback callbacks;
+  bool displayColors;
+  dynamic borderColor;
+  num borderWidth;
+
+  // Factory constructor
+  external factory ChartTooltipOptions({
+    bool enabled,
+    String mode,
+    bool intersect,
+    dynamic backgroundColor,
+    String titleFontFamily,
+    num titleFontSize,
+    String titleFontStyle,
+    dynamic titleFontColor,
+    num titleSpacing,
+    num titleMarginBottom,
+    String bodyFontFamily,
+    num bodyFontSize,
+    String bodyFontStyle,
+    dynamic bodyFontColor,
+    num bodySpacing,
+    String footerFontFamily,
+    num footerFontSize,
+    String footerFontStyle,
+    dynamic footerFontColor,
+    num footerSpacing,
+    num footerMarginTop,
+    num xPadding,
+    num yPadding,
+    num caretSize,
+    num cornerRadius,
+    String multiKeyBackground,
+    ChartTooltipCallback callbacks,
+    bool displayColors,
+    dynamic borderColor,
+    num borderWidth,
+  });
 }
 
 @anonymous
@@ -526,13 +527,20 @@ abstract class ChartAnimationObject {
 
 @anonymous
 @JS()
-abstract class ChartAnimationOptions {
-  external num get duration;
-  external set duration(num v);
-  external String get easing;
-  external set easing(String v);
+class ChartAnimationOptions {
+  num duration;
+  String easing;
+
   external void onProgress(dynamic chart);
   external void onComplete(dynamic chart);
+
+  // Add onProgress and onComplete to the factory constructor
+  external factory ChartAnimationOptions({
+    num duration,
+    String easing,
+    Function onProgress, // Add onProgress here
+    Function onComplete, // Optionally add onComplete too
+  });
 }
 
 @anonymous
@@ -845,21 +853,70 @@ abstract class PointLabelOptions {
 
 @anonymous
 @JS()
-abstract class LinearTickOptions implements TickOptions<num> {
-  external bool get beginAtZero;
-  external set beginAtZero(bool v);
-  external num get min;
-  external set min(num v);
-  external num get max;
-  external set max(num v);
-  external num get maxTicksLimit;
-  external set maxTicksLimit(num v);
-  external num get stepSize;
-  external set stepSize(num v);
-  external num get suggestedMin;
-  external set suggestedMin(num v);
-  external num get suggestedMax;
-  external set suggestedMax(num v);
+class LinearTickOptions implements TickOptions<num> {
+  bool beginAtZero;
+  num min;
+  num max;
+  num maxTicksLimit;
+  num stepSize;
+  num suggestedMin;
+  num suggestedMax;
+
+  // Properties inherited from TickOptions
+  bool autoSkip;
+  bool autoSkipPadding;
+  dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor;
+  String fontFamily;
+  num fontSize;
+  String fontStyle;
+  num labelOffset;
+  num maxRotation;
+  num minRotation;
+  bool mirror;
+  num padding;
+  bool reverse;
+
+  // Factory constructor with all properties
+  external factory LinearTickOptions({
+    bool beginAtZero,
+    num min,
+    num max,
+    num maxTicksLimit,
+    num stepSize,
+    num suggestedMin,
+    num suggestedMax,
+    bool autoSkip,
+    bool autoSkipPadding,
+    dynamic fontColor,
+    String fontFamily,
+    num fontSize,
+    String fontStyle,
+    num labelOffset,
+    num maxRotation,
+    num minRotation,
+    bool mirror,
+    num padding,
+    bool reverse,
+  });
+  @override
+  var backdropColor;
+
+  @override
+  num backdropPaddingX;
+
+  @override
+  num backdropPaddingY;
+
+  @override
+  bool display;
+
+  @override
+  bool showLabelBackdrop;
+
+  @override
+  callback(value, index, values) {
+    // TODO: implement callback
+  }
 }
 
 @anonymous
@@ -1061,19 +1118,219 @@ abstract class CommonAxe {
 
 @anonymous
 @JS()
-abstract class ChartXAxe implements CommonAxe {
-  external num get categoryPercentage;
-  external set categoryPercentage(num v);
-  external num get barPercentage;
-  external set barPercentage(num v);
-  external TimeScale get time;
-  external set time(TimeScale v);
+@JS()
+@anonymous
+@JS()
+@anonymous
+class ChartXAxe implements CommonAxe {
+  num categoryPercentage;
+  num barPercentage;
+  TimeScale time;
+  GridLineOptions gridLines;
+  TickOptions ticks;
+
+  // Corrected factory constructor
+  external factory ChartXAxe({
+    num categoryPercentage,
+    num barPercentage,
+    TimeScale time,
+    GridLineOptions gridLines,
+    TickOptions ticks,
+  });
+  @override
+  num barThickness;
+
+  @override
+  bool display;
+
+  @override
+  String id;
+
+  @override
+  String position;
+
+  @override
+  ScaleTitleOptions scaleLabel;
+
+  @override
+  bool stacked;
+
+  @override
+  String type;
+
+  @override
+  void afterBuildTicks([scale]) {
+    // TODO: implement afterBuildTicks
+  }
+
+  @override
+  void afterCalculateTickRotation([scale]) {
+    // TODO: implement afterCalculateTickRotation
+  }
+
+  @override
+  void afterDataLimits([scale]) {
+    // TODO: implement afterDataLimits
+  }
+
+  @override
+  void afterFit([scale]) {
+    // TODO: implement afterFit
+  }
+
+  @override
+  void afterSetDimension([scale]) {
+    // TODO: implement afterSetDimension
+  }
+
+  @override
+  void afterTickToLabelConversion([scale]) {
+    // TODO: implement afterTickToLabelConversion
+  }
+
+  @override
+  void afterUpdate([scale]) {
+    // TODO: implement afterUpdate
+  }
+
+  @override
+  void beforeBuildTicks([scale]) {
+    // TODO: implement beforeBuildTicks
+  }
+
+  @override
+  void beforeCalculateTickRotation([scale]) {
+    // TODO: implement beforeCalculateTickRotation
+  }
+
+  @override
+  void beforeDataLimits([scale]) {
+    // TODO: implement beforeDataLimits
+  }
+
+  @override
+  void beforeFit([scale]) {
+    // TODO: implement beforeFit
+  }
+
+  @override
+  void beforeSetDimension([scale]) {
+    // TODO: implement beforeSetDimension
+  }
+
+  @override
+  void beforeTickToLabelConversion([scale]) {
+    // TODO: implement beforeTickToLabelConversion
+  }
+
+  @override
+  void beforeUpdate([scale]) {
+    // TODO: implement beforeUpdate
+  }
 }
 
 /// tslint:disable-next-line no-empty-interface
 @anonymous
 @JS()
-abstract class ChartYAxe implements CommonAxe {}
+class ChartYAxe implements CommonAxe {
+  @override
+  num barThickness;
+
+  @override
+  bool display;
+
+  @override
+  GridLineOptions gridLines;
+
+  @override
+  String id;
+
+  @override
+  String position;
+
+  @override
+  ScaleTitleOptions scaleLabel;
+
+  @override
+  bool stacked;
+
+  @override
+  TickOptions ticks;
+
+  @override
+  String type;
+
+  @override
+  void afterBuildTicks([scale]) {
+    // TODO: implement afterBuildTicks
+  }
+
+  @override
+  void afterCalculateTickRotation([scale]) {
+    // TODO: implement afterCalculateTickRotation
+  }
+
+  @override
+  void afterDataLimits([scale]) {
+    // TODO: implement afterDataLimits
+  }
+
+  @override
+  void afterFit([scale]) {
+    // TODO: implement afterFit
+  }
+
+  @override
+  void afterSetDimension([scale]) {
+    // TODO: implement afterSetDimension
+  }
+
+  @override
+  void afterTickToLabelConversion([scale]) {
+    // TODO: implement afterTickToLabelConversion
+  }
+
+  @override
+  void afterUpdate([scale]) {
+    // TODO: implement afterUpdate
+  }
+
+  @override
+  void beforeBuildTicks([scale]) {
+    // TODO: implement beforeBuildTicks
+  }
+
+  @override
+  void beforeCalculateTickRotation([scale]) {
+    // TODO: implement beforeCalculateTickRotation
+  }
+
+  @override
+  void beforeDataLimits([scale]) {
+    // TODO: implement beforeDataLimits
+  }
+
+  @override
+  void beforeFit([scale]) {
+    // TODO: implement beforeFit
+  }
+
+  @override
+  void beforeSetDimension([scale]) {
+    // TODO: implement beforeSetDimension
+  }
+
+  @override
+  void beforeTickToLabelConversion([scale]) {
+    // TODO: implement beforeTickToLabelConversion
+  }
+
+  @override
+  void beforeUpdate([scale]) {
+    // TODO: implement beforeUpdate
+  }
+  external factory ChartYAxe({GridLineOptions gridLines, TickOptions ticks});
+}
 
 @anonymous
 @JS()
