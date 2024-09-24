@@ -774,12 +774,33 @@ abstract class ScaleTitleOptions {
 @anonymous
 @JS()
 abstract class TickOptions<T> {
+  external factory TickOptions(
+      {bool autoSkip,
+      bool autoSkipPadding,
+      bool display,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor,
+      String fontFamily,
+      num fontSize,
+      String fontStyle,
+      num labelOffset,
+      num maxRotation,
+      num minRotation,
+      bool mirror,
+      num padding,
+      bool reverse,
+      T min,
+      T max,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backdropColor,
+      num backdropPaddingX,
+      num backdropPaddingY,
+      num maxTicksLimit,
+      bool showLabelBackdrop});
+
   external bool get autoSkip;
   external set autoSkip(bool v);
   external bool get autoSkipPadding;
   external set autoSkipPadding(bool v);
-  external dynamic /*String|num*/ callback(
-      dynamic value, dynamic index, dynamic values);
+  external dynamic callback(dynamic value, dynamic index, dynamic values);
   external bool get display;
   external set display(bool v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
@@ -803,9 +824,9 @@ abstract class TickOptions<T> {
   external set padding(num v);
   external bool get reverse;
   external set reverse(bool v);
-  external dynamic get min;
+  external T get min;
   external set min(T v);
-  external dynamic get max;
+  external T get max;
   external set max(T v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backdropColor;
   external set backdropColor(
