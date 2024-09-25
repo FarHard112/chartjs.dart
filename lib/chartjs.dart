@@ -1280,76 +1280,48 @@ class ChartYAxe implements CommonAxe {
 
   @override
   String type;
+  @override
+  external void afterBuildTicks([dynamic scale]);
 
   @override
-  void afterBuildTicks([scale]) {
-    // TODO: implement afterBuildTicks
-  }
+  external void afterCalculateTickRotation([dynamic scale]);
 
   @override
-  void afterCalculateTickRotation([scale]) {
-    // TODO: implement afterCalculateTickRotation
-  }
+  external void afterDataLimits([dynamic scale]);
 
   @override
-  void afterDataLimits([scale]) {
-    // TODO: implement afterDataLimits
-  }
+  external void afterFit([dynamic scale]);
 
   @override
-  void afterFit([scale]) {
-    // TODO: implement afterFit
-  }
+  external void afterSetDimension([dynamic scale]);
 
   @override
-  void afterSetDimension([scale]) {
-    // TODO: implement afterSetDimension
-  }
+  external void afterTickToLabelConversion([dynamic scale]);
 
   @override
-  void afterTickToLabelConversion([scale]) {
-    // TODO: implement afterTickToLabelConversion
-  }
+  external void afterUpdate([dynamic scale]);
 
   @override
-  void afterUpdate([scale]) {
-    // TODO: implement afterUpdate
-  }
+  external void beforeBuildTicks([dynamic scale]);
 
   @override
-  void beforeBuildTicks([scale]) {
-    // TODO: implement beforeBuildTicks
-  }
+  external void beforeCalculateTickRotation([dynamic scale]);
 
   @override
-  void beforeCalculateTickRotation([scale]) {
-    // TODO: implement beforeCalculateTickRotation
-  }
+  external void beforeDataLimits([dynamic scale]);
 
   @override
-  void beforeDataLimits([scale]) {
-    // TODO: implement beforeDataLimits
-  }
+  external void beforeFit([dynamic scale]);
 
   @override
-  void beforeFit([scale]) {
-    // TODO: implement beforeFit
-  }
+  external void beforeSetDimension([dynamic scale]);
 
   @override
-  void beforeSetDimension([scale]) {
-    // TODO: implement beforeSetDimension
-  }
+  external void beforeTickToLabelConversion([dynamic scale]);
 
   @override
-  void beforeTickToLabelConversion([scale]) {
-    // TODO: implement beforeTickToLabelConversion
-  }
+  external void beforeUpdate([dynamic scale]);
 
-  @override
-  void beforeUpdate([scale]) {
-    // TODO: implement beforeUpdate
-  }
   external factory ChartYAxe({GridLineOptions gridLines, TickOptions ticks});
 }
 
