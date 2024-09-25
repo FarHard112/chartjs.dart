@@ -935,9 +935,7 @@ class LinearTickOptions implements TickOptions<num> {
   bool showLabelBackdrop;
 
   @override
-  callback(value, index, values) {
-    // TODO: implement callback
-  }
+  external void callback(value, index, values);
 }
 
 @anonymous
@@ -1139,25 +1137,23 @@ abstract class CommonAxe {
 
 @anonymous
 @JS()
-@JS()
-@anonymous
-@JS()
-@anonymous
 class ChartXAxe implements CommonAxe {
+  // Fields
+  @override
   num categoryPercentage;
+
+  @override
   num barPercentage;
+
+  @override
   TimeScale time;
+
+  @override
   GridLineOptions gridLines;
+
+  @override
   TickOptions ticks;
 
-  // Corrected factory constructor
-  external factory ChartXAxe({
-    num categoryPercentage,
-    num barPercentage,
-    TimeScale time,
-    GridLineOptions gridLines,
-    TickOptions ticks,
-  });
   @override
   num barThickness;
 
@@ -1179,75 +1175,57 @@ class ChartXAxe implements CommonAxe {
   @override
   String type;
 
+  // External Methods (No bodies)
   @override
-  void afterBuildTicks([scale]) {
-    // TODO: implement afterBuildTicks
-  }
+  external void afterBuildTicks([dynamic scale]);
 
   @override
-  void afterCalculateTickRotation([scale]) {
-    // TODO: implement afterCalculateTickRotation
-  }
+  external void afterCalculateTickRotation([dynamic scale]);
 
   @override
-  void afterDataLimits([scale]) {
-    // TODO: implement afterDataLimits
-  }
+  external void afterDataLimits([dynamic scale]);
 
   @override
-  void afterFit([scale]) {
-    // TODO: implement afterFit
-  }
+  external void afterFit([dynamic scale]);
 
   @override
-  void afterSetDimension([scale]) {
-    // TODO: implement afterSetDimension
-  }
+  external void afterSetDimension([dynamic scale]);
 
   @override
-  void afterTickToLabelConversion([scale]) {
-    // TODO: implement afterTickToLabelConversion
-  }
+  external void afterTickToLabelConversion([dynamic scale]);
 
   @override
-  void afterUpdate([scale]) {
-    // TODO: implement afterUpdate
-  }
+  external void afterUpdate([dynamic scale]);
 
   @override
-  void beforeBuildTicks([scale]) {
-    // TODO: implement beforeBuildTicks
-  }
+  external void beforeBuildTicks([dynamic scale]);
 
   @override
-  void beforeCalculateTickRotation([scale]) {
-    // TODO: implement beforeCalculateTickRotation
-  }
+  external void beforeCalculateTickRotation([dynamic scale]);
 
   @override
-  void beforeDataLimits([scale]) {
-    // TODO: implement beforeDataLimits
-  }
+  external void beforeDataLimits([dynamic scale]);
 
   @override
-  void beforeFit([scale]) {
-    // TODO: implement beforeFit
-  }
+  external void beforeFit([dynamic scale]);
 
   @override
-  void beforeSetDimension([scale]) {
-    // TODO: implement beforeSetDimension
-  }
+  external void beforeSetDimension([dynamic scale]);
 
   @override
-  void beforeTickToLabelConversion([scale]) {
-    // TODO: implement beforeTickToLabelConversion
-  }
+  external void beforeTickToLabelConversion([dynamic scale]);
 
   @override
-  void beforeUpdate([scale]) {
-    // TODO: implement beforeUpdate
-  }
+  external void beforeUpdate([dynamic scale]);
+
+  // External Factory Constructor (No body)
+  external factory ChartXAxe({
+    num categoryPercentage,
+    num barPercentage,
+    TimeScale time,
+    GridLineOptions gridLines,
+    TickOptions ticks,
+  });
 }
 
 /// tslint:disable-next-line no-empty-interface
